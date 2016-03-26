@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require
 
-require './lib/penalty_game'
+require_relative './controllers/penalty_game'
 run PenaltyGame
