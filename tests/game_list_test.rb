@@ -5,6 +5,7 @@ class TestGameList < Test::Unit::TestCase
   def test_methods
     assert_respond_to(GameList.instance,:create)
     assert_respond_to(GameList.instance,:find)
+    assert_respond_to(GameList.instance,:has_game?)
   end
 
   def test_creating_game
@@ -12,5 +13,11 @@ class TestGameList < Test::Unit::TestCase
     assert_instance_of(Game, game)
     game2 = GameList.instance.find(game.id)
     assert_instance_of(Game, game2)
+  end
+
+  def test_has_game
+    game = GameList.instance.create
+    assert_equal(GameList.instance.has_game?(game.id), true)
+    assert_equal(GameList.instance.has_game?('adam'), false)
   end
 end

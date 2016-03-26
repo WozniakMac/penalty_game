@@ -21,7 +21,7 @@ class PenaltyGame < Sinatra::Base
 
     action = Action.new(params[:x].to_s.to_i,params[:y].to_s.to_i)
     if !action.valid?
-      return {error: action.errors.first}.to_json
+      return {errors: action.errors.first}.to_json
     else
       if GameList.instance.has_game?(params[:id])
         game = GameList.instance.find(params[:id])
