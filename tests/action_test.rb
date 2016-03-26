@@ -1,4 +1,4 @@
-require '../lib/action'
+require_relative '../lib/action'
 require 'test/unit'
 
 class TestAction < Test::Unit::TestCase

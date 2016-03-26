@@ -1,5 +1,5 @@
-require '../lib/game'
-require '../lib/action'
+require_relative '../lib/game'
+require_relative '../lib/action'
 require 'test/unit'
 
 class TestGame < Test::Unit::TestCase

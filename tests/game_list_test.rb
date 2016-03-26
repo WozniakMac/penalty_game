@@ -1,4 +1,4 @@
-require '../lib/game_list'
+require_relative '../lib/game_list'
 require 'test/unit'
 
 class TestGameList < Test::Unit::TestCase

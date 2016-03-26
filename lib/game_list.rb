@@ -1,5 +1,5 @@
 require 'singleton'
-require '../lib/game'
+require_relative '../lib/game'
 
 class GameList
   include Singleton
@@ -15,6 +15,14 @@ class GameList
   end
 
   def find(id)
-    @games[id]
+    @games[id]      
+  end
+
+  def has_game?(id)
+    if @games.has_key?(id)
+      return true
+    else
+      return false
+    end
   end
 end

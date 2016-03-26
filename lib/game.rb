@@ -39,8 +39,8 @@ class Game
     def terminate_game
       if ((@user_goals == 3 and @computer_goals == 0) or 
           (@user_goals == 0 and @computer_goals == 3) or 
-          (@shot_counter >= 5 and @user_goals > @computer_goals) or 
-          (@shot_counter >= 5 and @user_goals < @computer_goals))
+          (@shot_counter >= 10 and @user_goals > @computer_goals and @shot_counter.even?) or 
+          (@shot_counter >= 10 and @user_goals < @computer_goals and @shot_counter.even?))
         @current_action = ActionTypes::ENDGAME
       end
     end
