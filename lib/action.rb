@@ -27,7 +27,7 @@ class Action
         @errors << "#{y} is not permited pameter"  
       elsif x < XMIN or x > XMAX
         @errors << "#{x} must be between #{XMIN} and #{XMAX}"
-      elsif y < YMIN or y > 2
+      elsif y < YMIN or y > YMAX
         @errors << "#{y} must be between #{YMIN} and #{YMAX}"  
       end
     end
