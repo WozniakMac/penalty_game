@@ -5,24 +5,20 @@ class GameList
   include Singleton
 
   def initialize
-    @games = Hash.new
+    @games = {}
   end
 
   def create
     game = Game.new
     @games[game.id] = game
-    return game
+    game
   end
 
   def find(id)
-    @games[id]      
+    @games[id]
   end
 
-  def has_game?(id)
-    if @games.has_key?(id)
-      return true
-    else
-      return false
-    end
+  def game?(id)
+    @games.key?(id)
   end
 end

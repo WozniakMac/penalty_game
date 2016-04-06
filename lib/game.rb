@@ -4,7 +4,7 @@ class Game
   attr_reader :id, :current_action, :user_goals, :computer_goals
   def initialize
     @id = SecureRandom.uuid
-    @current_action = Random.new.rand(ActionTypes::SHOT..ActionTypes::SAVE) 
+    @current_action = Random.new.rand(ActionTypes::SHOT..ActionTypes::SAVE)
     @user_goals = 0
     @computer_goals = 0
     @shot_counter = 0
@@ -24,27 +24,22 @@ class Game
   end
 
   def status
-    return {action: @current_action, user: @user_goals, computer: @computer_goals}
+    { action: @current_action, user: @user_goals, computer: @computer_goals }
   end
 
   private
-    def goal?(shot, save)
-      if shot.x == save.x and shot.y == save.y
-        return false
-      else
-        return true
-      end
-    end
 
-    def terminate_game
-      if ((@user_goals == 3 and @computer_goals == 0) or 
-          (@user_goals == 0 and @computer_goals == 3) or 
-          (@shot_counter >= 10 and @user_goals > @computer_goals and @shot_counter.even?) or 
-          (@shot_counter >= 10 and @user_goals < @computer_goals and @shot_counter.even?))
-        @current_action = ActionTypes::ENDGAME
-      end
-    end
+  def goal?(shot, save)
+    !(shot.x == save.x && shot.y == save.y)
+  end
 
+  def terminate_game
+    if ((@user_goals - @computer_goals).abs == 3) ||
+       (@shot_counter >= 10 && (@user_goals -
+        @computer_goals).abs >= 1 && @shot_counter.even?)
+      @current_action = ActionTypes::ENDGAME
+    end
+  end
 end
 
 class ActionTypes
