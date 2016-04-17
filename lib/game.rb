@@ -1,5 +1,6 @@
 require 'securerandom'
 
+# lib/game.rb
 class Game
   attr_reader :id, :current_action, :user_goals, :computer_goals
   def initialize

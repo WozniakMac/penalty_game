@@ -1,3 +1,4 @@
+# lib/action.rb
 class Action
   XMIN = 0
   XMAX = 4

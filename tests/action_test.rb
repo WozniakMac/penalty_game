@@ -1,14 +1,8 @@
 require_relative '../lib/action'
 require 'test/unit'
 
+# tests/action_test.rb
 class TestAction < Test::Unit::TestCase
-  def test_methods
-    assert_respond_to(Action.new(1, 2), :valid?)
-    assert_respond_to(Action.new(1, 2), :errors)
-    assert_respond_to(Action.new(1, 2), :x)
-    assert_respond_to(Action.new(1, 2), :y)
-  end
-
   def test_validation
     assert_equal(Action.new(1, 2).valid?, true)
     assert_equal(Action.new(-1, -1).valid?, false)

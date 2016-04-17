@@ -1,13 +1,8 @@
 require_relative '../lib/game_list'
 require 'test/unit'
 
+# tests/game_list_test.rb
 class TestGameList < Test::Unit::TestCase
-  def test_methods
-    assert_respond_to(GameList.instance, :create)
-    assert_respond_to(GameList.instance, :find)
-    assert_respond_to(GameList.instance, :game?)
-  end
-
   def test_creating_game
     game = GameList.instance.create
     assert_instance_of(Game, game)

@@ -2,16 +2,8 @@ require_relative '../lib/game'
 require_relative '../lib/action'
 require 'test/unit'
 
+# tests/game_test.rb
 class TestGame < Test::Unit::TestCase
-  def test_methods
-    assert_respond_to(Game.new, :id)
-    assert_respond_to(Game.new, :shot)
-    assert_respond_to(Game.new, :status)
-    assert_respond_to(Game.new, :current_action)
-    assert_respond_to(Game.new, :user_goals)
-    assert_respond_to(Game.new, :computer_goals)
-  end
-
   def test_id
     assert_instance_of(String, Game.new.id)
   end

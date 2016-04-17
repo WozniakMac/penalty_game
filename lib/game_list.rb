@@ -1,6 +1,7 @@
 require 'singleton'
 require_relative '../lib/game'
 
+# lib/game_list.rb
 class GameList
   include Singleton
 

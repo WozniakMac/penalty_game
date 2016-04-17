@@ -4,6 +4,7 @@ require 'json'
 require_relative '../lib/game_list'
 require_relative '../lib/action'
 
+# controllers/penatly_game.rb
 class PenaltyGame < Sinatra::Base
   helpers Sinatra::Param
 
